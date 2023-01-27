@@ -20,9 +20,18 @@ void test2() {
     std::cout << "]" << std::endl;
 }
 
+void test3() {
+    std::cout << "Test3=======================" << std::endl;
+    std::vector<double> nums_1{ 1.1,1.2,1.3,1.4,1.5,1.6,1.7, };
+    std::cout << "[ ";
+    std::for_each(nums_1.begin(), nums_1.end(), [](double i) { std::cout << i << " ";});
+    std::cout << "]" << std::endl;
+}
+
 int main()
 {
     test1();
     test2();
+    test3();
     return 0;
 }
