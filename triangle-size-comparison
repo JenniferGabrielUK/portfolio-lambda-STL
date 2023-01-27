@@ -17,12 +17,19 @@
     std::vector<Point> triangle3{ pt1, pt2, pt4 };
     //std::is_permutation ... Returns true if there exists a permutation of the elements in the range
     if (std::is_permutation(triangle1.begin(), triangle1.end(), triangle2.begin(), [](Point lhs, Point rhs) {
-        return lhs.x == lhs.y && rhs.x == rhs.y;
+        return lhs.x == rhs.x && lhs.y == rhs.y;
         })
         )
         std::cout << "Triangle 1 and triangle 2 are equivalent." << std::endl;
     else
         std::cout << "Triangle 1 and triangle 2 are not equivalent." << std::endl;
+    if (std::is_permutation(triangle1.begin(), triangle1.end(), triangle3.begin(), [](Point lhs, Point rhs) {
+        return lhs.x == rhs.x && lhs.y == rhs.y;
+        })
+        )
+        std::cout << "Triangle 1 and triangle 3 are equivalent." << std::endl;
+    else
+        std::cout << "Triangle 1 and triangle 3 are not equivalent." << std::endl;
 }
 
 int main {
