@@ -28,10 +28,19 @@ void test3() {
     std::cout << "]" << std::endl;
 }
 
+void test4() {
+    std::cout << "Test3=======================" << std::endl;
+    std::vector<long> nums_1{ 123477272,19347247,97492837,129847 };
+    std::cout << "[ ";
+    std::for_each(nums_1.begin(), nums_1.end(), [](long i) { std::cout << i << " "; });
+    std::cout << "]" << std::endl;
+}
+4
 int main()
 {
     test1();
     test2();
     test3();
+    test4();
     return 0;
 }
