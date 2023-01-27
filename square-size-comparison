@@ -3,7 +3,7 @@
 #include <algorithm>
 
 void test1() {
-    std::cout << "\nTest3====================" << std::endl;
+    std::cout << "\nTest1====================" << std::endl;
     struct Point {
         int x;
         int y;
@@ -26,6 +26,13 @@ void test1() {
         std::cout << "Sqaure 1 and Square 2 are equivalent." << std::endl;
     else
         std::cout << "Square 1 and Square 2 are NOT equivalent." << std::endl;
+    if (std::is_permutation(square2.begin(), square2.end(), square3.begin(), [](Point a, Point b) {
+        return a.x == b.x && a.y == b.y;
+        })
+        )
+        std::cout << "Sqaure 1 and Square 3 are equivalent." << std::endl;
+    else
+        std::cout << "Square 1 and Square 3 are NOT equivalent." << std::endl;
 }
 
 int main() {
