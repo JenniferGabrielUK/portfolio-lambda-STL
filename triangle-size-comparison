@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+  std::cout << "Test1=====================" << std::endl;
+    struct Point {
+        int x;
+        int y;
+    };
+    Point pt1{ 1,2 };
+    Point pt2{ 4,3 };
+    Point pt3{ 3,5 };
+    Point pt4{ 3,1 };
+    std::vector<Point> triangle1{ pt1, pt2, pt3 };
+    std::vector<Point> triangle2{ pt2, pt3, pt1 };
+    std::vector<Point> triangle3{ pt1, pt2, pt4 };
+    //std::is_permutation ... Returns true if there exists a permutation of the elements in the range
+    if (std::is_permutation(triangle1.begin(), triangle1.end(), triangle2.begin(), [](Point lhs, Point rhs) {
+        return lhs.x == lhs.y && rhs.x == rhs.y;
+        })
+        )
+        std::cout << "Triangle 1 and triangle 2 are equivalent." << std::endl;
+    else
+        std::cout << "Triangle 1 and triangle 2 are not equivalent." << std::endl;
+}
+
+int main {
+  test1();
+  return0;
+}
