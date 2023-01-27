@@ -11,8 +11,17 @@ void test1() {
     std::cout << "]" << std::endl;
 }
 
+void test2() {
+    std::cout << "Test2=======================" << std::endl;
+    std::vector<std::string> accounts_1{ "Jenny", "Elizabeth", "Gabriel", "Gandalf", "Frodo", "Gollom" };
+    std::cout << "\n[";
+    std::for_each(accounts_1.begin(), accounts_1.end(), [](std::string s) { std::cout << s << ", "; });
+    std::cout << "]" << std::endl;
+}
+
 int main()
 {
     test1();
+    test2();
     return 0;
 }
