@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void test1() {
+    std::cout << "\nTest3====================" << std::endl;
+    struct Point {
+        int x;
+        int y;
+    };
+    Point pt1{ 1,2 };
+    Point pt2{ 3,6 };
+    Point pt3{ 4,5 };
+    Point pt4{ 7,9 };
+    Point pt5{ 1,2 };
+    Point pt6{ 4,3 };
+    Point pt7{ 3,5 };
+    Point pt8{ 3,1 };
+    std::vector <Point> square1{ pt1,pt2,pt3,pt4 };
+    std::vector <Point> square2{ pt1,pt3,pt4,pt2 };
+    std::vector <Point> square3{ pt1,pt8,pt7,pt3 };
+    if (std::is_permutation(square1.begin(), square1.end(), square2.begin(), [](Point a, Point b) {
+        return a.x == b.x && a.y == b.y;
+        })
+        )
+        std::cout << "Sqaure 1 and Square 2 are equivalent." << std::endl;
+    else
+        std::cout << "Square 1 and Square 2 are NOT equivalent." << std::endl;
+}
+
+int main() {
+  test1();
+  return 0;
+}
