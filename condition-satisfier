@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Person {
+    friend std::ostream& operator<< (std::ostream& os, const Person& rhs);
+private:
+    std::string name;
+    int age;
+public:
+    Person(std::string name = "Unknown", int age = 0) : name{ name }, age{ age } {}
+    Person(const Person& p) : name(p.name), age(p.age) {}
+    ~Person() = default;
+    void set_name(std::string name) { this->name = name; }
+    std::string get_name() { return this->name; }
+    void set_age(int age) { this->age = age; }
+    int get_age() { return this->age; }
+};
+
+std::ostream& operator<< (std::ostream& os, const Person& rhs) {
+    os << rhs.name << " : " << rhs.age;
+    return os;
+}
+
+bool in_between(const std::vector<int>& nums, int start_value, int end_value) {
+    bool result{ false };
+    result = std::all_of(nums.begin(), nums.end(), [start_value, end_value](int value) {
+        return value >= start_value && value <= end_value;
+        });
+    return result;
+}
+
+int main() {
+  return 0;
+}
