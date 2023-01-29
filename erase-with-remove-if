@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void test1()
+{
+    std::cout << "Test4==================" << std::endl;
+    std::vector<int> nums {1, 2, 3, 4, 5};
+    nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
+        return num % 2 == 0;
+        }), nums.end());
+    for (int num : nums)
+        std::cout << num << " ";
+    std::vector<double> nums_1{ 1.1,1.2,1.3,1.4,1.5,1.6,2.4,2.778544 };
+    nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
+        return num % 2 == 0;
+        }), nums.end());
+    std::cout << std::endl;
+    for (double num : nums_1)
+        std::cout << num << " ";
+}
+
+int main {
+  test1();
+  return 0;
+}
