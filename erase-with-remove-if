@@ -12,9 +12,9 @@ void test1()
     for (int num : nums)
         std::cout << num << " ";
     std::vector<double> nums_1{ 1.1,1.2,1.3,1.4,1.5,1.6,2.4,2.778544 };
-    nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
+    nums_1.erase(std::remove_if(nums_1.begin(), nums_1.end(), [](int num) {
         return num % 2 == 0;
-        }), nums.end());
+        }), nums_1.end());
     std::cout << std::endl;
     for (double num : nums_1)
         std::cout << num << " ";
