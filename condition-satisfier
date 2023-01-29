@@ -30,6 +30,26 @@ bool in_between(const std::vector<int>& nums, int start_value, int end_value) {
     return result;
 }
 
+void test1() {
+    std::cout << "Test1===================" << std::endl;
+    std::cout << std::boolalpha;
+    std::vector<int> nums{ 1,2,3,4,5,6,7,8,9,10 };
+    std::vector<int> nums_1{ 50,51,52,53 };
+    for (int num : nums)
+        std::cout << num << " ";
+    std::cout << std::endl;
+    for (int num : nums_1)
+        std::cout << num << " ";
+    std::cout << std::endl;
+    std::cout << in_between(nums, 50, 60) << std::endl;
+    std::cout << in_between(nums_1, 50, 60) << std::endl;
+    std::cout << in_between(nums, 1, 10) << std::endl;
+    std::cout << in_between(nums_1, 1, 10) << std::endl;
+    std::cout << in_between(nums, 5, 7) << std::endl;
+    std::cout << in_between(nums_1, 5, 7) << std::endl;
+}
+
 int main() {
-  return 0;
+    test1();
+    return 0;
 }
