@@ -1,0 +1,29 @@
+// portfolio-lambda-stateful-examples.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+void test1()
+{
+    std::cout << "Test1=================" << std::endl;
+    std::vector<int> test_scores{ 93,88,75,69,99 };
+    int bonus_points{ 5 };
+    std::cout << "[Test Scores: ";
+    for (auto i : test_scores)
+        std::cout << i << " ";
+    std::cout << "]" << std::endl;
+    std::transform(test_scores.begin(), test_scores.end(), test_scores.begin(), [bonus_points](int score) {
+        return score += bonus_points;
+    });
+    std::cout << "[Test Score plus Bonus Points: ";
+    for (auto i : test_scores)
+        std::cout << i << " ";
+    std::cout << "]" << std::endl;
+}
+
+
+int main()
+{
+    test1();
+}
